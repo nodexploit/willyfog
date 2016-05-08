@@ -52,3 +52,7 @@ chmod +x /usr/local/bin/docker-compose
 
 # Bash completion for docker-compose
 curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+
+echo "------------------------------------------------------"
+echo "Installation finished."
+echo "------------------------------------------------------"

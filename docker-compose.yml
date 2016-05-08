@@ -1,0 +1,6 @@
+apache:
+  image: httpd:latest
+  ports:
+    - "80:80"
+  volumes:
+    - ./conf/httpd.conf:/usr/local/apache2/conf/httpd.conf

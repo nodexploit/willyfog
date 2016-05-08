@@ -30,9 +30,10 @@ Vagrant.configure(2) do |config|
 
   # Provisioning Script
   # --------------------
-  #config.vm.provision "shell", path: "bootstrap/provision.sh", args: ["vagrant"]
+  config.vm.provision "shell", path: "bootstrap/provision.sh"
+  config.vm.provision "shell", path: "bootstrap/install_docker.sh", args: ["vagrant"]
 
   # Synced Folder
   # --------------------
-  config.vm.synced_folder ".", "~/play-docker"
+  config.vm.synced_folder ".", "/home/vagrant/play-docker"
 end

@@ -29,5 +29,5 @@ XXXXXXXX            +------------+         +----------+      +-----------+     +
 
 ```
 <p align="center">
-  *ASCII DIAGRAM*
+  **Diagram of containers**
 </p>

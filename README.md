@@ -28,3 +28,6 @@ XXXXXXXX            +------------+         +----------+      +-----------+     +
                                          MORE JAVA DOCKERS
 
 ```
+<p align="center">
+  *ASCII DIAGRAM*
+</p>

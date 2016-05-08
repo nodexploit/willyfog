@@ -1,5 +1,7 @@
 # play-docker
 
+A project for development and production environment of Play for Scala with docker and vagrant.
+
 ```
                                               debian
                                            +----------+        XXXXXXXXXXXXXXXXX

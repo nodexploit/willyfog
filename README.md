@@ -28,6 +28,5 @@ XXXXXXXX            +------------+         +----------+      +-----------+     +
                                          MORE JAVA DOCKERS
 
 ```
-<p align="center">
-  **Diagram of containers**
-</p>
+-> **Diagram of containers** <-
+

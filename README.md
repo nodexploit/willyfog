@@ -31,10 +31,10 @@ $ vagrant ssh
 [...]
 ```
 
-3. Head to:
+3. Head to the following READMEs:
 
-* [willyfog's README](https://github.com/popokis/willyfog/blob/master/README.md)
-* [willyfog-openid's README](https://github.com/popokis/willyfog-openid/blob/master/README.md)
-* [willyfog-web's README](https://github.com/popokis/willyfog-web/blob/master/README.md)
+* [willyfog](https://github.com/popokis/willyfog/blob/master/README.md#deploy)
+* [willyfog-openid](https://github.com/popokis/willyfog-openid/blob/master/README.md#deploy)
+* [willyfog-web](https://github.com/popokis/willyfog-web/blob/master/README.md#deploy)
 
 To see particular details of the deploy of those projects.

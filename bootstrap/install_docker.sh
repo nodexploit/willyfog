@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
-# Install docker on the virtual machine with Ubuntu 14.04
+# Install docker on the virtual machine
 
-USAGE_TOOL="Usage: $0 <ROOT_USER>"
+DOCKER_COMPOSE_VERSION=1.7.1
 
 if [ "$EUID" -ne 0  ]
-then echo "Please run as root"
+then
+    echo "Please run as root"
     exit
 fi
 
+# Vagrant user by default
 if [ -z "$1"  ]
-  then echo "$USAGE_TOOL"
-  exit
+then
+    ROOT_USER=vagrant
+else
+    ROOT_USER=$1
 fi
 
 # Utilities
@@ -41,18 +45,18 @@ service docker start
 
 # Create docker group
 groupadd docker
-usermod -aG docker $1
+usermod -aG docker ${ROOT_USER}
 
 # Upgrade docker
-apt-get -y upgrade docker-engine
+#apt-get -y upgrade docker-engine
 
 # Install docker compose
-curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # Bash completion for docker-compose
 curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
 
 echo "------------------------------------------------------"
-echo "Installation finished."
+echo "Docker installation finished."
 echo "------------------------------------------------------"

@@ -38,9 +38,9 @@ Vagrant.configure(2) do |config|
 
   # Public network
   # --------------------
-  if PUBLIC_GUEST_IP
-    config.vm.network "public_network", ip: PUBLIC_GUEST_IP
-  end
+  #if PUBLIC_GUEST_IP
+  #  config.vm.network "public_network", ip: PUBLIC_GUEST_IP
+  #end
 
   # Optional (Remove if desired)
   config.vm.provider :virtualbox do |vb|
@@ -51,8 +51,8 @@ Vagrant.configure(2) do |config|
 
   # Provisioning Script
   # --------------------
-  #config.vm.provision "shell", path: "bootstrap/install_docker.sh"
-  #config.vm.provision "shell", path: "bootstrap/oracle_java_8.sh"
+  config.vm.provision "shell", path: "bootstrap/install_docker.sh"
+  config.vm.provision "shell", path: "bootstrap/oracle_java_8.sh"
   config.vm.provision "shell", path: "bootstrap/mysql56.sh"
   config.vm.provision "shell", path: "bootstrap/apache2.sh"
   config.vm.provision "shell", path: "bootstrap/php7_modphp.sh", args: [PUBLIC_HOST_IP]
@@ -61,7 +61,7 @@ Vagrant.configure(2) do |config|
   # --------------------
   config.vm.synced_folder ".", "/home/vagrant/#{File.basename(Dir.getwd)}"
   Dir.foreach('projects') do |project_name|
-      next if !PROJECTS.include? project_name
-      config.vm.synced_folder "./projects/#{project_name}", "/var/www/#{project_name}", mount_options: [ "dmode=774", "fmode=664" ], owner: 'vagrant', group: 'www-data'
-    end
+    next if !PROJECTS.include? project_name
+    config.vm.synced_folder "./projects/#{project_name}", "/var/www/#{project_name}", mount_options: [ "dmode=774", "fmode=664" ], owner: 'vagrant', group: 'www-data'
+  end
 end

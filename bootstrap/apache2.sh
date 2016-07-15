@@ -17,13 +17,14 @@ contains_element () {
 apt-get -y install apache2
 
 # Configure virtualhosts
-PROJECTS=(willyfog-openid willyfog-web)
+PROJECTS=("willyfog-openid" "willyfog-web")
 DOMAINS=(openid.willyfog.com willyfog.com)
 PORTS=(9000 8000)
 COUNT=0
 for f in /home/vagrant/$1/projects/*
 do
-    if [ contains_element $(basename ${f}) "${PROJECTS}" ]; then
+    contains_element "$(basename ${f})" "${PROJECTS}"
+    if [ $? -eq 0 ]; then
         echo "Listen ${PORTS[$COUNT]}
         <VirtualHost *:${PORTS[$COUNT]}>
             ServerName ${DOMAINS[$COUNT]}

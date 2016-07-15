@@ -61,7 +61,7 @@ Vagrant.configure(2) do |config|
   # --------------------
   config.vm.synced_folder ".", "/home/vagrant/#{File.basename(Dir.getwd)}"
   Dir.foreach('projects') do |project_name|
-      next if !PROJECTS.include? project_name[0]
+      next if !PROJECTS.include? project_name
       config.vm.synced_folder "./projects/#{project_name}", "/var/www/#{project_name}", mount_options: [ "dmode=774", "fmode=664" ], owner: 'vagrant', group: 'www-data'
     end
 end

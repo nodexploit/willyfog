@@ -1,7 +1,4 @@
-scripts
-=======
+bootstrap
+=========
 
-This is your personal legion of scripts to fight against both production and development
-environments.
-
-Let's automate your life.
+Here there are scripts that will provision the different VM environments.

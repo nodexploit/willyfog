@@ -51,9 +51,11 @@ Vagrant.configure(2) do |config|
 
   # Provisioning Script
   # --------------------
-  config.vm.provision "shell", path: "bootstrap/install_docker.sh"
+  config.vm.provision "shell", path: "bootstrap/docker.sh"
   config.vm.provision "shell", path: "bootstrap/oracle_java_8.sh"
+  config.vm.provision "shell", path: "bootstrap/sbt.sh"
   config.vm.provision "shell", path: "bootstrap/mysql56.sh"
+  config.vm.provision "shell", path: "bootstrap/bootstrap_db.sh"
   config.vm.provision "shell", path: "bootstrap/apache2.sh"
   config.vm.provision "shell", path: "bootstrap/php7_modphp.sh", args: [PUBLIC_HOST_IP]
 

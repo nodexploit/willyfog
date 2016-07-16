@@ -62,15 +62,15 @@ $ sbt
 [...]
 > assembly
 [...]
-[info]   Compilation completed in XX.XXX s
+[success] Total time: XXXX s, completed Xxx XX, XXXX X:XX:XX PM
 > exit
 ```
 
 And after all is finished, you will have your brand new `jar` under
-`project/target/scala-2.11/willyfog-assembly-1.0.jar`, so you can deploy the app in background with:
+`target/scala-2.11/willyfog-assembly-1.0.jar`, so you can deploy the app in background with:
 
 ```
-java -jar project/target/scala-2.11/willyfog-assembly-1.0.jar &
+java -jar target/scala-2.11/willyfog-assembly-1.0.jar &
 ```
 
 ## willyfog-openid

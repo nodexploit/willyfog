@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
 
   # Public network
   # --------------------
-  unless PUBLIC_GUEST_IP.nil?
+  unless PUBLIC_GUEST_IP.length == 0
     config.vm.network "public_network", ip: PUBLIC_GUEST_IP
   end
 

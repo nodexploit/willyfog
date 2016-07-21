@@ -39,6 +39,8 @@ a2enmod rewrite
 
 service apache2 restart
 
+echo "192.168.33.10  willyfog.com api.willyfog.com openid.willyfog.com" | tee -a /etc/hosts
+
 echo "------------------------------------------------------"
 echo "Apache2 installation finished."
 echo "------------------------------------------------------"

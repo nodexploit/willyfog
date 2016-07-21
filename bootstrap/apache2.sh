@@ -15,12 +15,10 @@ service apache2 restart
 # Configure virtualhosts
 PROJECTS=(willyfog-api willyfog-openid willyfog-web)
 DOMAINS=(api.wwillyfog.com openid.willyfog.com willyfog.com)
-PORTS=(7000 9000 8000)
 COUNT=0
 for f in "${PROJECTS[@]}"
 do
-    echo "Listen ${PORTS[$COUNT]}
-    <VirtualHost *:${PORTS[$COUNT]}>
+    echo "<VirtualHost *:80>
         ServerName ${DOMAINS[$COUNT]}
         DocumentRoot /var/www/${PROJECTS[$COUNT]}/public/
         ErrorLog  /var/www/${PROJECTS[$COUNT]}/logs/projects-error.log
@@ -36,6 +34,7 @@ do
     COUNT=$((COUNT + 1))
 done
 
+a2dissite 000-default.conf
 a2enmod rewrite
 
 service apache2 restart

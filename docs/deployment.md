@@ -20,57 +20,10 @@ $ vagrant ssh
 
 ## willyfog-api
 
-### Connecting to the database
-
-In order to connect to the database you may find yourself in this two cases:
-
-* Maybe you're deploying the API making a `jar` (with something like 
-[sbt-assembly](https://github.com/sbt/sbt-assembly)) and running it with 
-`java` **inside the Vagrant environment**. In this case you will have
-the MySQL server locally so you **don't have to hesitate to connect**.
-* But, if you're executing your `jar` from **outside the Vagrant environment**
-(because you're badass!) or more probably, you're developing with some
-IDE like **IntelliJ** which takes care of deploying the `jar` by itself, you
-will find yourself in troubles because **you won't have the MySQL server locally**.
-
-### Creating a SSH tunnel
-
-Don't panic! Let's make an ssh tunnel so you can connect the database server
-like a charm. Please execute this command:
-
+1. Install dependencies:
 ```
-# (From the host machine)
-$ ssh -f vagrant@192.168.33.10 -L 3307:localhost:3306 -N
-```
-
-So from here on, you will have the database server listening locally on `3307`. 
-If you want to connect via MySQL cli, you only have to execute:
-
-```
-# (From the host machine)
-$ mysql -h 127.0.0.1 -P 3307 -uroot -proot
-```
-
-### Everything is in the jar
-
-Because it's deadly simple, we use 
-[sbt-assembly](https://github.com/sbt/sbt-assembly) to build our `jar`.
-
-```
-$ cd ~/willyfog/project/willyfog-api
-$ sbt
-[...]
-> assembly
-[...]
-[success] Total time: XXXX s, completed Xxx XX, XXXX X:XX:XX PM
-> exit
-```
-
-And after all is finished, you will have your brand new `jar` under
-`target/scala-2.11/willyfog-assembly-1.0.jar`, so you can deploy the app in background with:
-
-```
-java -jar target/scala-2.11/willyfog-assembly-1.0.jar &
+$ cd ~/willyfog/projects/willyfog-api
+$ composer install
 ```
 
 ## willyfog-openid
@@ -94,5 +47,13 @@ $ openssl rsa -in data/privkey.pem -pubout -out data/pubkey.pem
 $ cd ~/willyfog/projects/willyfog-web
 $ composer install
 ```
+
+## Domains
+
+Remember to add the different domains to your `/etc/hosts` file:
+```
+$ echo "192.168.33.10  willyfog.com api.willyfog.com openid.willyfog.com" | sudo tee -a /etc/hosts
+```
+
 
 And that's all folks!

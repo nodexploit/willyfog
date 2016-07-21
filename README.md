@@ -20,9 +20,8 @@ of a Play for Scala app. To read more, please head [play-docker](docs/play-docke
 
 ![Architecture](docs/architecture.png)
 
-* (4) [willyfog-api](https://github.com/popokis/willyfog-api): REST API built with Scala on top of 
-[Finagle](https://github.com/twitter/finagle) and 
-[Finch](https://github.com/finagle/finch). This is the core of the project.
+* (4) [willyfog-api](https://github.com/popokis/willyfog-api): REST API built with PHP on top of 
+[Slim](https://github.com/slimphp/Slim). This is the core of the project.
 * (5) [willyfog-openid](https://github.com/popokis/willyfog-openid): OpenID provider thanks to PHP, 
 [Slim](https://github.com/slimphp/Slim) and 
 [bshaffer/oauth2-server-php](https://github.com/bshaffer/oauth2-server-php).
@@ -55,9 +54,15 @@ For further information, please visit [deployment section](docs/deployment.md).
 
 ## Access
 
-If you use the default IP provided by the Vagrant machine i.e `192.168.33.10`
-you will be able to access each application in the following ports:
+(Remember) Add the domains to the `/etc/hosts`:
 
-* `willyfog-api`: 192.178.33.10:7000
-* `willyfog-web`: 192.178.33.10:8000
-* `willyfog-openid`: 192.178.33.10:9000
+```
+$ echo "192.168.33.10  willyfog.com api.willyfog.com openid.willyfog.com" | sudo tee -a /etc/hosts
+```
+
+If you use the default IP provided by the Vagrant machine i.e `192.168.33.10`
+you will be able to access each application in the following domains:
+
+* `willyfog-api`: api.willyfog.com
+* `willyfog-web`: willyfog.com
+* `willyfog-openid`: openid.willyfog.com

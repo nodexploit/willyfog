@@ -25,7 +25,7 @@
 PUBLIC_GUEST_IP = "#{ENV['PUBLIC_GUEST_IP']}"
 PUBLIC_HOST_IP = "#{ENV['PUBLIC_HOST_IP']}"
 PRIVATE_GUEST_IP = '192.168.33.10'
-PROJECTS = ['willyfog-openid', 'willyfog-web']
+PROJECTS = ['willyfog-api', 'willyfog-openid', 'willyfog-web']
 
 Vagrant.configure(2) do |config|
   # Base Box

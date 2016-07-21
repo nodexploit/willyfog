@@ -52,13 +52,18 @@ production and development stages (sounds good, isn't it?).
 
 For further information, please visit [deployment section](docs/deployment.md).
 
-## Access
+## Try it
 
-(Remember) Add the domains to the `/etc/hosts`:
+If you followed [deployment section](docs/deployment.md), now you cna try 
+the application:
 
-```
-$ echo "192.168.33.10  willyfog.com api.willyfog.com openid.willyfog.com" | sudo tee -a /etc/hosts
-```
+1. Head to [willyfog.com](http://willyfog.com)
+2. Press the `Log In` button.
+3. Use the following credentials:
+    * Email: `willy@example.com`
+    * Password: `foobar`
+4. Temporarily, use the echoed access token to make protected API requests.
+(Remember to add `Authorization: Bearer <ACCESS_TOKEN>` header to your requests)
 
 If you use the default IP provided by the Vagrant machine i.e `192.168.33.10`
 you will be able to access each application in the following domains:

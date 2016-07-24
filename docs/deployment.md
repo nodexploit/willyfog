@@ -48,6 +48,12 @@ $ cd ~/willyfog/projects/willyfog-web
 $ composer install
 ```
 
+2. Link `openid` server public key (in order to handle JWT)
+```
+$ cd data
+$ ln -s ../../willyfog-openid/data/pubkey.pem
+```
+
 ## Domains
 
 Remember to add the different domains to your `/etc/hosts` file:

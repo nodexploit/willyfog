@@ -27,7 +27,7 @@ $ composer install
 2. Set the `constants.php` file. If it's not production, you can simply 
 rename `constants.php.example` to `constants.php`. 
 ```
-$ mv app/constants.php.example app/constants.php
+$ cp app/constants.php.example app/constants.php
 ```
 
 ## willyfog-openid
@@ -40,7 +40,7 @@ $ composer install
 2. Set the `constants.php` file. If it's not production, you can simply 
 rename `constants.php.example` to `constants.php`. 
 ```
-$ mv app/constants.php.example app/constants.php
+$ cp app/constants.php.example app/constants.php
 ```
 3. Generate public and private keys:
 ```
@@ -58,7 +58,7 @@ $ composer install
 2. Set the `constants.php` file. If it's not production, you can simply 
 rename `constants.php.example` to `constants.php`. 
 ```
-$ mv app/constants.php.example app/constants.php
+$ cp app/constants.php.example app/constants.php
 ```
 3. Link `openid` server public key (in order to handle JWT)
 ```

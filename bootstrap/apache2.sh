@@ -13,8 +13,8 @@ apt-get -y install apache2
 service apache2 restart
 
 # Configure virtualhosts
-PROJECTS=(willyfog-api willyfog-openid willyfog-web)
-DOMAINS=(api.wwillyfog.com openid.willyfog.com willyfog.com)
+PROJECTS=(willyfog-openid willyfog-web)
+DOMAINS=(openid.willyfog.com willyfog.com)
 COUNT=0
 for f in "${PROJECTS[@]}"
 do

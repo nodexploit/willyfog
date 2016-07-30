@@ -5,8 +5,8 @@ Here are located the different repositories that conforms project Willyfog:
 
 ![Architecture](../docs/architecture.png)
 
-* (4) [willyfog-api](https://github.com/popokis/willyfog-api): REST API built with PHP on top of 
-[Slim](https://github.com/slimphp/Slim). This is the core of the project.
+* (4) [willyfog-api](https://github.com/popokis/willyfog-api): REST API built with Java on top of 
+[Play 2](https://github.com/playframework/playframework). This is the core of the project.
 * (5) [willyfog-openid](https://github.com/popokis/willyfog-openid): OpenID provider thanks to PHP, 
 [Slim](https://github.com/slimphp/Slim) and 
 [bshaffer/oauth2-server-php](https://github.com/bshaffer/oauth2-server-php).

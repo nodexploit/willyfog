@@ -69,7 +69,7 @@ And after all is finished, you will have your brand new `zip` under
 `target/universal/willyfog-api-1.0.zip`. Unzip it:
 
 ```
-$ cd target/universal/willyfog-api-1.0
+$ cd target/universal
 $ unzip willyfog-api-1.0.zip
 $ cd willyfog-api-1.0
 ```

@@ -35,6 +35,7 @@ Vagrant.configure(2) do |config|
   # Private network
   # --------------------
   config.vm.network "private_network", ip: PRIVATE_GUEST_IP
+  config.vm.network "forwarded_port", guest: 7000, host: 7000
 
   # Public network
   # --------------------

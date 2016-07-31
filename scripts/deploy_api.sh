@@ -45,5 +45,5 @@ bin/willyfog-api -Dplay.crypto.secret=wde3R4tTdrs -Dhttp.port=7000 &
 
 
 echo "***********************************"
-echo "Remember do that: GRANT ALL PRIVILEGES ON willyfog_db.* TO '$DB_USER'@'%';"
+echo "Remember do that (with root mysql privileges): GRANT ALL PRIVILEGES ON willyfog_db.* TO '$DB_USER'@'%';"
 echo "***********************************"

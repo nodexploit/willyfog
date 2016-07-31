@@ -56,7 +56,7 @@ Because it's deadly simple, we use
 `sbt dist` to build our executable.
 
 ```
-$ cd ~/willyfog/project/willyfog-api
+$ cd ~/willyfog/projects/willyfog-api
 $ sbt
 [...]
 > dist

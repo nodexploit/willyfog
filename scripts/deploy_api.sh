@@ -15,17 +15,17 @@ ROTO
 
 echo "$DROPEANDO" > /tmp/drop.sql
 
-mysql -u$DB_USER -p$DB_PASS willyfog_db < /tmp/drop.sql
+mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /tmp/drop.sql
 
-mysql -u$DB_USER -p$DB_PASS willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/schema.sql
+mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/schema.sql
 
-mysql -u$DB_USER -p$DB_PASS willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/countries.sql
+mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/countries.sql
 
-mysql -u$DB_USER -p$DB_PASS willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/search.sql
+mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/search.sql
 
-mysql -u$DB_USER -p$DB_PASS willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/request.sql
+mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/request.sql
 
-mysql -u$DB_USER -p$DB_PASS willyfog_db -e 'UPDATE willyfog_db.oauth_client SET redirect_uri = "http://popokis.com:8010/login/callback" WHERE client_id="webclient";'
+mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db -e 'UPDATE willyfog_db.oauth_client SET redirect_uri = "http://popokis.com:8010/login/callback" WHERE client_id="webclient";'
 
 # Build the project
 
@@ -34,7 +34,7 @@ sbt dist
 # Check if willyfog-api is already running
 cd target/universal/willyfog-api-1.0/
 DUMMY_VAR=$(cat RUNNING_PID)
-kill -9 $DUMMY_VAR
+kill -9 "$DUMMY_VAR"
 cd ..
 rm -rf willyfog-api-1.0
 

@@ -77,7 +77,7 @@ $ cd willyfog-api-1.0
 And then execute it with your application secret:
 
 ```
-$ bin/willyfog-api -Dplay.crypto.secret=abcdefghijk
+$ bin/willyfog-api -Dplay.crypto.secret=abcdefghijk -Dhttp.port=7000 &
 ```
 
 ## willyfog-openid

@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+while true; do
+    read -p "Do you wish to run this script? (The database will be erased if already created): [y/n] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 cd ~/willyfog/projects/willyfog-api
 
 # Update the project if necessary
@@ -19,11 +28,12 @@ mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /tmp/drop.sql
 
 mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/schema.sql
 
-mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/countries.sql
-
-mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/search.sql
-
-mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < /home/web1/willyfog/projects/willyfog-api/database/request.sql
+for i in /home/web1/willyfog/projects/willyfog-api/database/inserts/* ; do
+  if [ -f "$i" ]; then
+    echo "Dumping script ${i} ..."
+    mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db < ${i}
+  fi
+done
 
 mysql -u"$DB_USER" -p"$DB_PASS" willyfog_db -e 'UPDATE willyfog_db.oauth_client SET redirect_uri = "http://popokis.com:8010/login/callback" WHERE client_id="webclient";'
 

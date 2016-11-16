@@ -58,6 +58,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "bootstrap/bootstrap_db.sh"
   config.vm.provision "shell", path: "bootstrap/apache2.sh"
   config.vm.provision "shell", path: "bootstrap/php7_modphp.sh", args: [PUBLIC_HOST_IP]
+  config.vm.provision "shell", inline: "service apache2 restart", run: "always"
 
   # Synced Folder
   # --------------------

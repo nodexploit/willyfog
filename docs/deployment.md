@@ -56,7 +56,7 @@ Because it's deadly simple, we use
 `sbt dist` to build our executable.
 
 ```
-$ cd ~/willyfog/project/willyfog-api
+$ cd ~/willyfog/projects/willyfog-api
 $ sbt
 [...]
 > dist
@@ -69,7 +69,7 @@ And after all is finished, you will have your brand new `zip` under
 `target/universal/willyfog-api-1.0.zip`. Unzip it:
 
 ```
-$ cd target/universal/willyfog-api-1.0
+$ cd target/universal
 $ unzip willyfog-api-1.0.zip
 $ cd willyfog-api-1.0
 ```
@@ -77,7 +77,7 @@ $ cd willyfog-api-1.0
 And then execute it with your application secret:
 
 ```
-$ bin/willyfog-api -Dplay.crypto.secret=abcdefghijk
+$ bin/willyfog-api -Dplay.crypto.secret=abcdefghijk -Dhttp.port=7000 &
 ```
 
 ## willyfog-openid

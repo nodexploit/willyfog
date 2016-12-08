@@ -110,11 +110,15 @@ rename `constants.php.example` to `constants.php`.
 ```
 $ cp app/constants.php.example app/constants.php
 ```
-3. Link `openid` server public key (in order to handle JWT)
+3. Copy `openid` server public key (in order to handle JWT)
 ```
 $ cd data
-$ ln -s ../../willyfog-openid/data/pubkey.pem
+$ cp ../../willyfog-openid/data/pubkey.pem .
 ```
+
+## willyfog-mobile
+
+1. Remove the `BEGIN` and `END` lines of the `pubkey.pem`.
 
 ## Domains
 
